@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictivis — Market Insights That Convert</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0f;
+            --surface: #12121a;
+            --surface-hover: #1a1a24;
+            --border: #2a2a3a;
+            --text: #f0f0f5;
+            --text-muted: #8888a0;
+            --accent: #7c5cff;
+            --accent-glow: rgba(124, 92, 255, 0.3);
+            --success: #22c55e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(20px);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #6b4cee;
+            box-shadow: 0 0 30px var(--accent-glow);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-ghost:hover {
+            background: var(--surface);
+            border-color: var(--text-muted);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(ellipse at center, var(--accent-glow) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .badge span {
+            color: var(--success);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+        }
+
+        h1 .accent {
+            background: linear-gradient(135deg, var(--accent), #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.35rem;
+            color: var(--text-muted);
+            max-width: 550px;
+            margin-bottom: 3rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 4rem;
+        }
+
+        /* Value Props */
+        .value-section {
+            padding: 6rem 4rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .value-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .value-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .value-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .value-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .value-item h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .value-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            padding: 6rem 4rem;
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .problem-section .container {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .problem-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .problem-section p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .problem-section .highlight {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            padding: 8rem 2rem;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        /* Email Form */
+        .email-form {
+            display: flex;
+            gap: 0.75rem;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        .email-form input {
+            flex: 1;
+            padding: 0.875rem 1rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .email-form input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .email-form input::placeholder {
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem 4rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem 1.5rem;
+            }
+
+            .hero {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .value-section,
+            .problem-section,
+            .cta-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .email-form {
+                flex-direction: column;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Predicti<span>vis</span></a>
+        <a href="#waitlist" class="btn btn-primary">Get Early Access</a>
+    </header>
+
+    <section class="hero">
+        <div class="badge">
+            <span>●</span> Coming Soon
+        </div>
+        <h1>See what your market <span class="accent">actually wants</span></h1>
+        <p>Turn scattered conversations into clear insights — and copy that converts.</p>
+        <div class="hero-buttons">
+            <a href="#waitlist" class="btn btn-primary">Join the Waitlist</a>
+        </div>
+    </section>
+
+    <section class="value-section">
+        <h2>Market research is broken</h2>
+        <div class="value-grid">
+            <div class="value-item">
+                <div class="value-icon">🔍</div>
+                <h3>Hours of manual digging</h3>
+                <p>Scrolling through forums, reviews, and social feeds looking for patterns that might not even be there.</p>
+            </div>
+            <div class="value-item">
+                <div class="value-icon">🎯</div>
+                <h3>Data without direction</h3>
+                <p>Even when you find insights, turning them into messaging that resonates is another project entirely.</p>
+            </div>
+            <div class="value-item">
+                <div class="value-icon">🤷</div>
+                <h3>Guessing where to look</h3>
+                <p>Reddit? G2? LinkedIn? YouTube comments? You're not even sure where your audience actually talks.</p>
+            </div>
+            <div class="value-item">
+                <div class="value-icon">⏳</div>
+                <h3>Copy that falls flat</h3>
+                <p>You write what you think they want to hear. But it doesn't land because you're not speaking their language.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="problem-section">
+        <div class="container">
+            <h2>What if you could skip to the answer?</h2>
+            <p>Imagine knowing exactly <span class="highlight">where your audience hangs out</span>, what they're frustrated about, and <span class="highlight">the exact words they use</span> to describe their problems.</p>
+            <p>Then imagine that turning into <span class="highlight">ready-to-send outreach</span> — automatically.</p>
+            <p style="margin-top: 2rem; color: var(--text);">That's what we're building.</p>
+        </div>
+    </section>
+
+    <section class="cta-section" id="waitlist">
+        <h2>Be first to know</h2>
+        <p>Early access coming soon. Get on the list.</p>
+        <form class="email-form" onsubmit="return false;">
+            <input type="email" placeholder="you@company.com" required>
+            <button type="submit" class="btn btn-primary">Join Waitlist</button>
+        </form>
+    </section>
+
+    <footer>
+        <span>© 2026 Predictivis</span>
+        <span>A DataStudio product</span>
+    </footer>
+</body>
+</html>
