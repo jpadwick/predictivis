@@ -385,8 +385,9 @@
     <section class="cta-section" id="waitlist">
         <h2>Be first to know</h2>
         <p>Early access coming soon. Get on the list.</p>
-        <form class="email-form" onsubmit="return false;">
-            <input type="email" placeholder="you@company.com" required>
+        <form class="email-form" action="https://formspree.io/f/xpwzgvqw" method="POST">
+            <input type="email" name="email" placeholder="you@company.com" required>
+            <input type="hidden" name="_subject" value="New Predictivis Waitlist Signup">
             <button type="submit" class="btn btn-primary">Join Waitlist</button>
         </form>
     </section>
