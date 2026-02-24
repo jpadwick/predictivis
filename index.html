@@ -385,11 +385,42 @@
     <section class="cta-section" id="waitlist">
         <h2>Be first to know</h2>
         <p>Early access coming soon. Get on the list.</p>
-        <form class="email-form" action="https://formspree.io/f/xpwzgvqw" method="POST">
-            <input type="email" name="email" placeholder="you@company.com" required>
-            <input type="hidden" name="_subject" value="New Predictivis Waitlist Signup">
-            <button type="submit" class="btn btn-primary">Join Waitlist</button>
+        <form class="email-form" id="waitlist-form">
+            <input type="email" name="email" id="email-input" placeholder="you@company.com" required>
+            <button type="submit" class="btn btn-primary" id="submit-btn">Join Waitlist</button>
         </form>
+        <p id="form-success" style="display:none; color: var(--success); margin-top: 1rem;">✓ You're on the list! We'll be in touch.</p>
+        <p id="form-error" style="display:none; color: #ef4444; margin-top: 1rem;">Something went wrong. Try again?</p>
+        
+        <script>
+        document.getElementById('waitlist-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submit-btn');
+            const email = document.getElementById('email-input').value;
+            
+            btn.disabled = true;
+            btn.textContent = 'Joining...';
+            
+            try {
+                const res = await fetch('https://formspree.io/f/mykdbqkj', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({ email: email })
+                });
+                
+                if (res.ok) {
+                    document.getElementById('waitlist-form').style.display = 'none';
+                    document.getElementById('form-success').style.display = 'block';
+                } else {
+                    throw new Error('Failed');
+                }
+            } catch (err) {
+                document.getElementById('form-error').style.display = 'block';
+                btn.disabled = false;
+                btn.textContent = 'Join Waitlist';
+            }
+        });
+        </script>
     </section>
 
     <footer>
