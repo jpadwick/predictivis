@@ -235,6 +235,7 @@
 
         .what-section h2 {
             margin-bottom: 2rem;
+            text-align: center;
         }
 
         .what-section p {
@@ -242,7 +243,7 @@
             line-height: 1.8;
             max-width: 800px;
             margin: 0 auto;
-            text-align: center;
+            text-align: left;
         }
 
         /* Screenshot Placeholder */
@@ -299,8 +300,8 @@
 
         /* Differentiators */
         .diff-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            display: flex;
+            flex-direction: column;
             gap: 2rem;
             margin-top: 3rem;
         }
@@ -309,7 +310,14 @@
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 2rem;
+            padding: 2.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+
+        .diff-item h3 {
+            flex: 1;
         }
 
         /* When Section */
@@ -420,8 +428,7 @@
                 padding: 4rem 1.5rem;
             }
 
-            .problem-grid,
-            .diff-grid {
+            .problem-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -449,7 +456,7 @@
 
     <!-- Hero -->
     <section class="hero">
-        <h1>Know if your idea is worth building <span class="accent">before you spend months on it</span></h1>
+        <h1><span class="accent">Know if your idea is worth building</span></h1>
         <p>Describe your business idea. We search real user conversations across 8 platforms and tell you if the opportunity is real.</p>
         <div class="hero-buttons">
             <a href="#waitlist" class="btn btn-primary">Join the early access waitlist</a>
@@ -472,7 +479,7 @@
                 <p>Search results blend genuine user complaints with vendor content, affiliates, and AI-spun listicles. It all looks the same.</p>
             </div>
             <div class="problem-item">
-                <div class="problem-icon">🕳</div>
+                <div class="problem-icon">💬</div>
                 <h3>Missing the conversations that matter</h3>
                 <p>The best signals are buried in Reddit threads, G2 reviews, Trustpilot, Capterra, Hacker News, and niche communities you don't have time to dig through.</p>
             </div>
