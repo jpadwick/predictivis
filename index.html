@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Predictivis — Market Insights That Convert</title>
+    <title>Predictivis — Market Intelligence From Real User Conversations</title>
+    <meta name="description" content="Know if your idea is worth building before you spend months on it. We search real user conversations and tell you if the opportunity is real.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Predictivis — Market Intelligence From Real User Conversations">
+    <meta property="og:description" content="Describe your business idea. We search real user conversations across 8 platforms and tell you if the opportunity is real.">
+    <meta property="og:image" content="/og-image.png">
+    <meta property="og:type" content="website">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -126,29 +134,13 @@
             pointer-events: none;
         }
 
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-        }
-
-        .badge span {
-            color: var(--success);
-        }
-
         h1 {
             font-size: clamp(2.5rem, 6vw, 4.5rem);
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 1.5rem;
-            max-width: 800px;
+            max-width: 900px;
+            position: relative;
         }
 
         h1 .accent {
@@ -161,37 +153,60 @@
         .hero p {
             font-size: 1.35rem;
             color: var(--text-muted);
-            max-width: 550px;
+            max-width: 650px;
             margin-bottom: 3rem;
+            position: relative;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 1rem;
+            flex-direction: column;
+            gap: 0.75rem;
+            align-items: center;
             margin-bottom: 4rem;
+            position: relative;
         }
 
-        /* Value Props */
-        .value-section {
+        .helper-text {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        /* Section Styling */
+        section {
             padding: 6rem 4rem;
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
-        .value-section h2 {
-            font-size: 2rem;
+        section h2 {
+            font-size: 2.25rem;
             font-weight: 700;
             margin-bottom: 3rem;
             text-align: center;
         }
 
-        .value-grid {
+        section h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        section p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Problem Grid */
+        .problem-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
         }
 
-        .value-item {
+        .problem-item {
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 16px;
@@ -199,71 +214,159 @@
             transition: all 0.3s;
         }
 
-        .value-item:hover {
+        .problem-item:hover {
             border-color: var(--accent);
             transform: translateY(-4px);
         }
 
-        .value-icon {
+        .problem-icon {
             font-size: 2rem;
             margin-bottom: 1rem;
         }
 
-        .value-item h3 {
-            font-size: 1.15rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .value-item p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* Problem Section */
-        .problem-section {
-            padding: 6rem 4rem;
+        /* What Section */
+        .what-section {
             background: var(--surface);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 4rem;
+            margin: 4rem auto;
         }
 
-        .problem-section .container {
-            max-width: 700px;
+        .what-section h2 {
+            margin-bottom: 2rem;
+        }
+
+        .what-section p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            max-width: 800px;
             margin: 0 auto;
             text-align: center;
         }
 
-        .problem-section h2 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
+        /* Screenshot Placeholder */
+        .screenshot-placeholder {
+            background: var(--surface);
+            border: 2px dashed var(--border);
+            border-radius: 16px;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin: 3rem 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-        .problem-section p {
+        .screenshot-placeholder h4 {
+            font-size: 1.25rem;
             color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
-        .problem-section .highlight {
+        .screenshot-placeholder p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            max-width: 500px;
+        }
+
+        /* Report Items */
+        .report-items {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .report-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .report-item h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .report-item p {
+            font-size: 1rem;
+        }
+
+        /* Differentiators */
+        .diff-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .diff-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        /* When Section */
+        .when-section {
+            background: linear-gradient(135deg, rgba(124, 92, 255, 0.1), rgba(167, 139, 250, 0.05));
+            border: 1px solid rgba(124, 92, 255, 0.2);
+            border-radius: 24px;
+            padding: 4rem;
+            margin: 4rem auto;
+            text-align: center;
+        }
+
+        .when-section p {
+            font-size: 1.15rem;
+            max-width: 650px;
+            margin: 1rem auto;
+        }
+
+        .when-section .highlight {
             color: var(--text);
             font-weight: 600;
         }
 
-        /* CTA */
+        /* CTA Section */
         .cta-section {
             text-align: center;
             padding: 8rem 2rem;
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            margin-top: 4rem;
         }
 
         .cta-section h2 {
             font-size: 2.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
         }
 
-        .cta-section p {
-            color: var(--text-muted);
-            margin-bottom: 2rem;
+        .cta-section .steps {
+            max-width: 700px;
+            margin: 3rem auto;
+            text-align: left;
+        }
+
+        .cta-section .steps p {
             font-size: 1.1rem;
+            margin: 1rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .cta-section .steps p::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
         }
 
         /* Email Form */
@@ -271,7 +374,7 @@
             display: flex;
             gap: 0.75rem;
             max-width: 450px;
-            margin: 0 auto;
+            margin: 2rem auto;
         }
 
         .email-form input {
@@ -298,9 +401,7 @@
         footer {
             padding: 2rem 4rem;
             border-top: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            text-align: center;
             color: var(--text-muted);
             font-size: 0.9rem;
         }
@@ -315,24 +416,27 @@
                 padding: 6rem 1.5rem 3rem;
             }
 
-            .value-grid {
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .problem-grid,
+            .diff-grid {
                 grid-template-columns: 1fr;
             }
 
-            .value-section,
-            .problem-section,
-            .cta-section {
-                padding: 4rem 1.5rem;
+            .what-section,
+            .when-section {
+                padding: 3rem 1.5rem;
             }
 
             .email-form {
                 flex-direction: column;
             }
 
-            footer {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
+            .screenshot-placeholder {
+                min-height: 300px;
+                padding: 3rem 1.5rem;
             }
         }
     </style>
@@ -340,62 +444,139 @@
 <body>
     <header>
         <a href="#" class="logo">Predicti<span>vis</span></a>
-        <a href="#waitlist" class="btn btn-primary">Get Early Access</a>
+        <a href="#waitlist" class="btn btn-primary">Join Waitlist</a>
     </header>
 
+    <!-- Hero -->
     <section class="hero">
-        <div class="badge">
-            <span>●</span> Coming Soon
-        </div>
-        <h1>Predict what your market <span class="accent">actually wants</span></h1>
-        <p>Clear vision into scattered conversations — insights and copy that convert.</p>
+        <h1>Know if your idea is worth building <span class="accent">before you spend months on it</span></h1>
+        <p>Describe your business idea. We search real user conversations across 8 platforms and tell you if the opportunity is real.</p>
         <div class="hero-buttons">
-            <a href="#waitlist" class="btn btn-primary">Join the Waitlist</a>
+            <a href="#waitlist" class="btn btn-primary">Join the early access waitlist</a>
+            <p class="helper-text">Be first to try Predictivis on your own market opportunity.</p>
         </div>
     </section>
 
-    <section class="value-section">
-        <h2>Market research is broken</h2>
-        <div class="value-grid">
-            <div class="value-item">
-                <div class="value-icon">🔍</div>
-                <h3>Hours of manual digging</h3>
-                <p>Scrolling through forums, reviews, and social feeds looking for patterns that might not even be there.</p>
+    <!-- Problem Section -->
+    <section>
+        <h2>Most founders are guessing about demand</h2>
+        <div class="problem-grid">
+            <div class="problem-item">
+                <div class="problem-icon">🔍</div>
+                <h3>Skipping real research</h3>
+                <p>You either ship without talking to the market or skim a few Google results and hope you're right.</p>
             </div>
-            <div class="value-item">
-                <div class="value-icon">🎯</div>
-                <h3>Data without direction</h3>
-                <p>Even when you find insights, turning them into messaging that resonates is another project entirely.</p>
+            <div class="problem-item">
+                <div class="problem-icon">🧩</div>
+                <h3>Mixing real pain with marketing noise</h3>
+                <p>Search results blend genuine user complaints with vendor content, affiliates, and AI-spun listicles. It all looks the same.</p>
             </div>
-            <div class="value-item">
-                <div class="value-icon">🤷</div>
-                <h3>Guessing where to look</h3>
-                <p>Reddit? G2? LinkedIn? YouTube comments? You're not even sure where your audience actually talks.</p>
+            <div class="problem-item">
+                <div class="problem-icon">🕳</div>
+                <h3>Missing the conversations that matter</h3>
+                <p>The best signals are buried in Reddit threads, G2 reviews, Trustpilot, Capterra, Hacker News, and niche communities you don't have time to dig through.</p>
             </div>
-            <div class="value-item">
-                <div class="value-icon">⏳</div>
-                <h3>Copy that falls flat</h3>
-                <p>You write what you think they want to hear. But it doesn't land because you're not speaking their language.</p>
+            <div class="problem-item">
+                <div class="problem-icon">🎲</div>
+                <h3>Treating a 12-month build like a coin flip</h3>
+                <p>You invest months of product and engineering time without a clear, evidence-backed view of whether the opportunity is real, narrow, or dead.</p>
             </div>
         </div>
     </section>
 
-    <section class="problem-section">
-        <div class="container">
-            <h2>What if you could predict the answer?</h2>
-            <p>Imagine having clear <span class="highlight">vision into where your audience hangs out</span>, what they're frustrated about, and <span class="highlight">the exact words they use</span> to describe their problems.</p>
-            <p>Then imagine that turning into <span class="highlight">ready-to-send outreach</span> — automatically.</p>
-            <p style="margin-top: 2rem; color: var(--text);">That's what we're building.</p>
+    <!-- What Predictivis Does -->
+    <div class="what-section">
+        <h2>A go/no-go report from the places users speak honestly</h2>
+        <p>You describe the opportunity you're exploring and Predictivis searches real user conversations across Reddit, G2, Capterra, Trustpilot, TrustRadius, Hacker News, Twitter, and Product Hunt to find out what actual buyers are saying, switching between, and paying for.</p>
+        <p style="margin-top: 1.5rem; color: var(--text); font-weight: 600;">Not what marketers publish. Not what SEO blogs rank. What real people complain about and spend money on.</p>
+    </div>
+
+    <!-- What You Get -->
+    <section>
+        <h2>A structured report you can base a decision on</h2>
+        <p style="text-align: center; margin-bottom: 2rem;">Here's what a real Predictivis report looks like for "AI-powered e-discovery software for small and mid-size law firms":</p>
+        
+        <div style="margin: 3rem 0; text-align: center;">
+            <img src="verdict-screenshot.jpg" alt="Predictivis verdict card showing Yes, but... verdict for AI-powered e-discovery software for small and mid-size law firms" style="max-width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--border);">
+        </div>
+
+        <div class="report-items">
+            <div class="report-item">
+                <h3>📋 Plain-language verdict</h3>
+                <p>Not a score. Not a dashboard. A direct answer: is this a strong opportunity, a narrow one, or one to walk away from — and why. The example above found real pain and real switching behavior, but flagged a crowded competitive field with 10+ established players.</p>
+            </div>
+            <div class="report-item">
+                <h3>✓ Confidence-scored findings</h3>
+                <p>Every finding is tagged by the strength of its evidence. A pain point mentioned on Reddit AND G2 AND Trustpilot carries real weight. A claim from a single blog post is flagged as thin. You see exactly how much trust to put in each insight.</p>
+            </div>
+            <div class="report-item">
+                <h3>🏆 Competitive landscape</h3>
+                <p>Who's already in this space, how real users talk about them, what they praise, and where they fall short — based on reviews and discussions, not vendor marketing pages.</p>
+            </div>
+            <div class="report-item">
+                <h3>🎯 Gap analysis</h3>
+                <p>Where existing solutions under-deliver and what kind of wedge a new product would realistically need to win. Gaps without direct user evidence are honestly tagged as estimates.</p>
+            </div>
+            <div class="report-item">
+                <h3>🔗 Cross-cutting insights</h3>
+                <p>The patterns that only become visible when you look across findings together. Not just "users are frustrated with pricing" and "users switch frequently" as separate observations — but what those two things combined mean for your entry strategy.</p>
+            </div>
+        </div>
+
+        <div class="screenshot-placeholder" style="margin-top: 3rem;">
+            <h4>SCREENSHOT: Findings Tab</h4>
+            <p>Shows 2-3 theme cards with confidence badges (HIGH/MEDIUM), real user quotes with platform attribution tags (Reddit, G2, etc.), and the "so what" actionable takeaway under each finding.</p>
         </div>
     </section>
 
+    <!-- Why Different -->
+    <section>
+        <h2>Why founders trust this over Google searches</h2>
+        <div class="diff-grid">
+            <div class="diff-item">
+                <h3>🗣 Real user conversations, not the open web</h3>
+                <p>We prioritize Reddit, G2, Trustpilot, Capterra, and other places people complain honestly — not polished marketing sites or SEO content farms.</p>
+            </div>
+            <div class="diff-item">
+                <h3>🤔 Honest about what we don't know</h3>
+                <p>Gaps, unknowns, and AI-assisted estimates are clearly flagged. You see where the evidence is strong, where it's thin, and where it's missing entirely. If the data doesn't support a conclusion, we say so.</p>
+            </div>
+            <div class="diff-item">
+                <h3>⚖️ Evidence-weighted across platforms</h3>
+                <p>A pain point that shows up on Reddit, G2, and Trustpilot carries more weight than a single forum post. Our confidence scoring reflects that — no fake certainty.</p>
+            </div>
+            <div class="diff-item">
+                <h3>🚫 Walk-away recommendations included</h3>
+                <p>If the evidence says don't build this, the report says that plainly. We're not trying to make every opportunity look good.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- When to Use -->
+    <div class="when-section">
+        <h2>You've been thinking about this idea for a while</h2>
+        <p>You've Googled around. You've read some Reddit threads. Maybe you've talked to a few people. But you're not sure if the pain is real or you're just seeing what you want to see.</p>
+        <p>You're about to invest serious time — months of building, maybe money, maybe a team. And the honest question is: <span class="highlight">should I?</span></p>
+        <p style="margin-top: 2rem; color: var(--text);">That's the moment Predictivis is for. Before you commit, get a structured, evidence-backed answer from the places your future customers are already talking.</p>
+    </div>
+
+    <!-- CTA -->
     <section class="cta-section" id="waitlist">
-        <h2>Get predictive vision</h2>
-        <p>Early access coming soon. Get on the list.</p>
+        <h2>Join the early access waitlist</h2>
+        <p style="font-size: 1.15rem; color: var(--text-muted);">We're opening early access for founders who want evidence before they build.</p>
+        
+        <div class="steps">
+            <p>Tell us the opportunity you're exploring</p>
+            <p>We search real user conversations across the platforms that matter</p>
+            <p>You get a structured, evidence-backed report during early access</p>
+        </div>
+
         <form class="email-form" id="waitlist-form">
             <input type="email" name="email" id="email-input" placeholder="you@company.com" required>
-            <button type="submit" class="btn btn-primary" id="submit-btn">Join Waitlist</button>
+            <button type="submit" class="btn btn-primary" id="submit-btn">Join the early access waitlist</button>
         </form>
+        <p class="helper-text">We'll email you when your spot opens.</p>
+        
         <p id="form-success" style="display:none; color: var(--success); margin-top: 1rem;">✓ You're on the list! We'll be in touch.</p>
         <p id="form-error" style="display:none; color: #ef4444; margin-top: 1rem;">Something went wrong. Try again?</p>
         
@@ -424,7 +605,7 @@
             } catch (err) {
                 document.getElementById('form-error').style.display = 'block';
                 btn.disabled = false;
-                btn.textContent = 'Join Waitlist';
+                btn.textContent = 'Join the early access waitlist';
             }
         });
         </script>
@@ -432,7 +613,6 @@
 
     <footer>
         <span>© 2026 Predictivis</span>
-        <span>A DataStudio product concept</span>
     </footer>
 </body>
 </html>
