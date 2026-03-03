@@ -229,8 +229,9 @@
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 24px;
-            padding: 4rem;
+            padding: 4rem 3rem;
             margin: 4rem auto;
+            max-width: 900px;
         }
 
         .what-section h2 {
@@ -241,8 +242,8 @@
         .what-section p {
             font-size: 1.15rem;
             line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 700px;
+            margin: 1rem auto;
             text-align: left;
         }
 
@@ -311,13 +312,25 @@
             border: 1px solid var(--border);
             border-radius: 16px;
             padding: 2.5rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .diff-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
         }
 
         .diff-item h3 {
-            flex: 1;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .diff-item p {
+            font-size: 1.05rem;
+            line-height: 1.7;
         }
 
         /* When Section */
@@ -325,15 +338,21 @@
             background: linear-gradient(135deg, rgba(124, 92, 255, 0.1), rgba(167, 139, 250, 0.05));
             border: 1px solid rgba(124, 92, 255, 0.2);
             border-radius: 24px;
-            padding: 4rem;
+            padding: 6rem 4rem;
             margin: 4rem auto;
             text-align: center;
         }
 
+        .when-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+
         .when-section p {
-            font-size: 1.15rem;
-            max-width: 650px;
-            margin: 1rem auto;
+            font-size: 1.2rem;
+            line-height: 2;
+            max-width: 700px;
+            margin: 1.5rem auto;
         }
 
         .when-section .highlight {
@@ -432,9 +451,16 @@
                 grid-template-columns: 1fr;
             }
 
-            .what-section,
-            .when-section {
+            .what-section {
                 padding: 3rem 1.5rem;
+            }
+
+            .when-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .when-section h2 {
+                font-size: 2rem;
             }
 
             .email-form {
@@ -540,19 +566,19 @@
         <h2>Why founders trust this over Google searches</h2>
         <div class="diff-grid">
             <div class="diff-item">
-                <h3>🗣 Real user conversations, not the open web</h3>
+                <h3><span style="font-size: 1.5rem;">🗣</span> Real user conversations, not the open web</h3>
                 <p>We prioritize Reddit, G2, Trustpilot, Capterra, and other places people complain honestly — not polished marketing sites or SEO content farms.</p>
             </div>
             <div class="diff-item">
-                <h3>🤔 Honest about what we don't know</h3>
+                <h3><span style="font-size: 1.5rem;">🤔</span> Honest about what we don't know</h3>
                 <p>Gaps, unknowns, and AI-assisted estimates are clearly flagged. You see where the evidence is strong, where it's thin, and where it's missing entirely. If the data doesn't support a conclusion, we say so.</p>
             </div>
             <div class="diff-item">
-                <h3>⚖️ Evidence-weighted across platforms</h3>
+                <h3><span style="font-size: 1.5rem;">⚖️</span> Evidence-weighted across platforms</h3>
                 <p>A pain point that shows up on Reddit, G2, and Trustpilot carries more weight than a single forum post. Our confidence scoring reflects that — no fake certainty.</p>
             </div>
             <div class="diff-item">
-                <h3>🚫 Walk-away recommendations included</h3>
+                <h3><span style="font-size: 1.5rem;">🚫</span> Walk-away recommendations included</h3>
                 <p>If the evidence says don't build this, the report says that plainly. We're not trying to make every opportunity look good.</p>
             </div>
         </div>
