@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Predictivis — Market Intelligence From Real User Conversations</title>
-    <meta name="description" content="Know if your idea is worth building before you spend months on it. We search real user conversations and tell you if the opportunity is real.">
+    <meta name="description" content="Know if the demand is real before you build. We search real user conversations and tell you if the opportunity is real.">
     
     <!-- Open Graph -->
     <meta property="og:title" content="Predictivis — Market Intelligence From Real User Conversations">
@@ -333,6 +333,28 @@
             line-height: 1.7;
         }
 
+        /* Pull Quote */
+        .pull-quote {
+            margin-top: 1.5rem;
+            padding: 1.25rem 1.5rem;
+            border-left: 3px solid var(--accent);
+            background: rgba(124, 92, 255, 0.08);
+            border-radius: 0 8px 8px 0;
+            font-size: 1rem;
+            font-style: italic;
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .pull-quote cite {
+            display: block;
+            margin-top: 0.75rem;
+            font-style: normal;
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
         /* When Section */
         .when-section {
             background: linear-gradient(135deg, rgba(124, 92, 255, 0.1), rgba(167, 139, 250, 0.05));
@@ -482,7 +504,7 @@
 
     <!-- Hero -->
     <section class="hero">
-        <h1><span class="accent">Know if your idea is worth building</span></h1>
+        <h1><span class="accent">Know if the demand is real before you build</span></h1>
         <p>Tell us what market you're exploring. We search real user conversations across review sites, forums, and communities — and tell you if the opportunity is real.</p>
         <div class="hero-buttons">
             <a href="#waitlist" class="btn btn-primary">Join the early access waitlist</a>
@@ -492,7 +514,7 @@
 
     <!-- Problem Section -->
     <section>
-        <h2>Most founders are guessing about demand</h2>
+        <h2>The research you're doing right now is probably misleading you</h2>
         <div class="problem-grid">
             <div class="problem-item">
                 <div class="problem-icon">🔍</div>
@@ -501,13 +523,13 @@
             </div>
             <div class="problem-item">
                 <div class="problem-icon">🧩</div>
-                <h3>Mixing real pain with marketing noise</h3>
-                <p>Search results blend genuine user complaints with vendor content, affiliates, and AI-spun listicles. It all looks the same.</p>
+                <h3>AI-generated research looks exactly like real research</h3>
+                <p>ChatGPT and Perplexity give you confident, well-structured answers with no verified user behind any of it. You can't tell what's real.</p>
             </div>
             <div class="problem-item">
                 <div class="problem-icon">💬</div>
                 <h3>Missing the conversations that matter</h3>
-                <p>The best signals are buried in Reddit threads, G2 reviews, Trustpilot, Capterra, Hacker News, and niche communities you don't have time to dig through.</p>
+                <p>The best signals are buried in Reddit threads, G2 reviews, Trustpilot, Hacker News, and niche communities you don't have time to dig through.</p>
             </div>
             <div class="problem-item">
                 <div class="problem-icon">🎲</div>
@@ -519,8 +541,8 @@
 
     <!-- What Predictivis Does -->
     <div class="what-section">
-        <h2>A go/no-go report from the places users speak honestly</h2>
-        <p>You describe the opportunity you're exploring and Predictivis searches real user conversations across Reddit, G2, Capterra, Trustpilot, TrustRadius, Hacker News, Twitter, and Product Hunt to find out what actual buyers are saying, switching between, and paying for.</p>
+        <h2>A structured report built from what real users actually said</h2>
+        <p>You describe the opportunity you're exploring and Predictivis searches real user conversations across Reddit, G2, Trustpilot, TrustRadius, Hacker News, Twitter, and Product Hunt to find out what actual buyers are saying, switching between, and paying for.</p>
         <p style="margin-top: 1.5rem; color: var(--text); font-weight: 600;">Not what marketers publish. Not what SEO blogs rank. What real people complain about and spend money on.</p>
     </div>
 
@@ -551,8 +573,8 @@
                 <p>Where existing solutions under-deliver and what kind of wedge a new product would realistically need to win. Gaps without direct user evidence are honestly tagged as estimates.</p>
             </div>
             <div class="report-item">
-                <h3>🔗 Cross-cutting insights</h3>
-                <p>The patterns that only become visible when you look across findings together. Not just "users are frustrated with pricing" and "users switch frequently" as separate observations — but what those two things combined mean for your entry strategy.</p>
+                <h3>💡 Plain-language recommendation</h3>
+                <p>Not just data. A direct answer to: is this a strong opportunity, a narrow one, or one to walk away from — and what kind of product would realistically win it.</p>
             </div>
         </div>
 
@@ -566,8 +588,12 @@
         <h2>Why founders trust this over Google searches</h2>
         <div class="diff-grid">
             <div class="diff-item">
-                <h3><span style="font-size: 1.5rem;">🗣</span> Real user conversations, not the open web</h3>
-                <p>We prioritize Reddit, G2, Trustpilot, Capterra, and other places people complain honestly — not polished marketing sites or SEO content farms.</p>
+                <h3><span style="font-size: 1.5rem;">🗣</span> Real quotes from real people, with the platform they came from</h3>
+                <p>We prioritize Reddit, G2, Trustpilot, and other places people complain honestly — not polished marketing sites or SEO content farms.</p>
+                <blockquote class="pull-quote">
+                    "The user management system feels like it was designed to maximize accidental billables rather than workflow efficiency."
+                    <cite>— Trustpilot reviewer, project management software</cite>
+                </blockquote>
             </div>
             <div class="diff-item">
                 <h3><span style="font-size: 1.5rem;">🤔</span> Honest about what we don't know</h3>
@@ -587,7 +613,7 @@
     <!-- When to Use -->
     <div class="when-section">
         <h2>You've been thinking about this idea for a while</h2>
-        <p>You've Googled around. You've read some Reddit threads. Maybe you've talked to a few people. But you're not sure if the pain is real or you're just seeing what you want to see.</p>
+        <p>You've Googled it. You've asked ChatGPT. You've skimmed some Reddit threads. The answers sounded reasonable — but none of them showed you a real person saying a real thing about the problem you're trying to solve. That's the gap.</p>
         <p>You're about to invest serious time — months of building, maybe money, maybe a team. And the honest question is: <span class="highlight">should I?</span></p>
         <p style="margin-top: 2rem; color: var(--text);">That's the moment Predictivis is for. Before you commit, get a structured, evidence-backed answer from the places your future customers are already talking.</p>
     </div>
